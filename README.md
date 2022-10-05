@@ -21,3 +21,5 @@ A simple desktop app **POS** made using javafx and MySQL
 4. Open your ide and then import the project !
 
 # Pictures from inside
+![This is an image](https://drive.google.com/file/d/1fDuBWN-C-o-YGGB52hYIKtLHgHYqbg5U/view?usp=sharing)
+
