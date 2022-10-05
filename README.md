@@ -13,3 +13,10 @@ A simple desktop app **POS** made using javafx and MySQL
 
 ## Providers 
 1. Add/delete/update
+
+# How to use
+1. You should have java 8 installed 
+2. Install **XAMPP** for the database
+3. Open your ide and then import the project !
+
+# Pictures from inside
