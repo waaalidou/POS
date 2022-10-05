@@ -17,6 +17,7 @@ A simple desktop app **POS** made using javafx and MySQL
 # How to use
 1. You should have java 8 installed 
 2. Install **XAMPP** for the database
-3. Open your ide and then import the project !
+3. You should download javafx libs
+4. Open your ide and then import the project !
 
 # Pictures from inside
