@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="382.0" prefWidth="333.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.login.CreatAccController">
+    <children>
+        <TextField fx:id="Username" layoutX="49.0" layoutY="139.0" prefHeight="44.0" prefWidth="236.0" promptText="Username" />
+        <Label layoutX="49.0" layoutY="113.0" text="Username">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Label>
+        <Label layoutX="49.0" layoutY="194.0" text="Mot de pass">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="InsertCateg" layoutX="50.0" layoutY="301.0" onAction="#InsertAbonement" prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: #00C853;" text="Creer" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="InsertCateg1" layoutX="177.0" layoutY="301.0" onAction="#CancelCreation" prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: #E53935;" text="Annuler" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </JFXButton>
+        <Label layoutX="54.0" layoutY="50.0" text=" Nouveau compte">
+            <font>
+                <Font name="AbelBecker Bold" size="29.0" />
+            </font>
+        </Label>
+      <PasswordField fx:id="Password" layoutX="49.0" layoutY="220.0" prefHeight="44.0" prefWidth="236.0" promptText="Password" />
+    </children>
+</AnchorPane>

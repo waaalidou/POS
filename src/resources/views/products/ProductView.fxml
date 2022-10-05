@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="717.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" stylesheets="@../../css/tableview/tv.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.produit.ProductTableController">
+    <children>
+        <TableView fx:id="productTable" editable="true" layoutX="74.0" layoutY="118.0" prefHeight="534.0" prefWidth="1078.0" stylesheets="@../../css/tableview/tv.css" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="73.0" AnchorPane.topAnchor="118.0">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="65.0" resizable="false" style="-fx-alignment: center;" text="Id" />
+                <TableColumn fx:id="nomCol" prefWidth="180.0" resizable="false" style="-fx-alignment: center;" text="Nom Produit" />
+                <TableColumn fx:id="codeCol" prefWidth="110.0" resizable="false" style="-fx-alignment: center;" text="Code" />
+                <TableColumn fx:id="quantiteCol" prefWidth="120.0" resizable="false" style="-fx-alignment: center;" text="Quantite" />
+            <TableColumn fx:id="minCol" editable="false" prefWidth="115.0" resizable="false" style="-fx-alignment: center;" text="Minimum" />
+                <TableColumn fx:id="categoryCol" minWidth="5.0" prefWidth="155.0" resizable="false" style="-fx-alignment: center;" text="Categorie" />
+                <TableColumn fx:id="fornisseurCol" prefWidth="150.0" resizable="false" style="-fx-alignment: center;" text="Fournisseur" />
+            <TableColumn fx:id="AjoutSupp" prefWidth="163.0" style="-fx-alignment: center;" text="Ajout/Supp" />
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_LEFT" layoutX="71.0" layoutY="66.0" prefHeight="45.0" prefWidth="1135.0" style="-fx-background-color: #fff;">
+            <children>
+                <FontAwesomeIconView fill="#00c853" glyphName="REFRESH" onMouseClicked="#refreshTable" size="37" styleClass="btn">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+                <FontAwesomeIconView fill="#03a9f4" glyphName="PLUS" onMouseClicked="#addProductScreen" size="37" styleClass="btn">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+                <FontAwesomeIconView fill="#e53935" glyphName="REMOVE" onMouseClicked="#deleteProduct" size="37" styleClass="btn">
+                    <HBox.margin>
+                        <Insets bottom="4.0" right="15.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="editBtn" glyphName="EDIT" onMouseClicked="#UpdateProductScreen" size="37" styleClass="btn">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="categoryAdd" glyphName="SERVER" onMouseClicked="#categoryScreen" size="35">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView glyphName="BOOK" onMouseClicked="#StaticsPage" size="37">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="LOGOUT" fill="#b71c1c" glyphName="SIGN_OUT" onMouseClicked="#logout" size="37">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></FontAwesomeIconView>
+            <ComboBox fx:id="filterComboBox1" prefHeight="35.0" prefWidth="152.0" promptText="Fournisseur">
+               <HBox.margin>
+                  <Insets left="181.0" right="10.0" />
+               </HBox.margin>
+            </ComboBox>
+                <ComboBox fx:id="filterComboBox" prefHeight="35.0" prefWidth="140.0" promptText="Categorie">
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </ComboBox>
+                <TextField fx:id="searchField" prefHeight="35.0" prefWidth="150.0" promptText="Nom">
+                    <HBox.margin>
+                        <Insets right="9.0" />
+                    </HBox.margin>
+                </TextField>
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchByName" prefHeight="35.0" prefWidth="76.0" styleClass="btn" stylesheets="@../../css/tableview/tv.css" text="Search">
+                    <HBox.margin>
+                        <Insets right="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+      <HBox alignment="CENTER" layoutX="335.0" layoutY="8.0" prefHeight="54.0" prefWidth="246.0" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="8.0">
+         <children>
+            <Label alignment="CENTER" text="List Des Produits">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <ImageView fx:id="supplierIcon" fitHeight="30.0" fitWidth="37.0" layoutX="14.0" layoutY="673.0" onMouseClicked="#fournScreen" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0">
+         <image>
+            <Image url="@../../images/supplier.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="CustomerIcon" fitHeight="30.0" fitWidth="30.0" layoutX="1305.0" layoutY="673.0" onMouseClicked="#ClientScreen" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0">
+         <image>
+            <Image url="@../../images/customer.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

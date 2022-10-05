@@ -1,0 +1,7 @@
+#Categorycontainer {
+    -fx-border-color :  #212121;
+    -fx-border-width : 2px;
+}
+#AnchorPane {
+    -fx-background-color : #ffffff;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.statistics.products.ProductsStatisticsScreenController">
+   <children>
+      <PieChart fx:id="ProduitParCategorie" layoutX="51.0" layoutY="95.0" prefHeight="510.0" prefWidth="510.0" title="Produit/Categorie" AnchorPane.leftAnchor="51.0" />
+      <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="14.0" layoutY="46.0" onMouseClicked="#goBackFunction" size="30" />
+      <Label alignment="CENTER" layoutX="385.0" layoutY="13.0" text="Statistiques Des Produits">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="NbrBarchart" layoutX="643.0" layoutY="95.0" prefHeight="510.0" prefWidth="510.0" title="Nomber Produit par Categorie">
+        <xAxis>
+          <CategoryAxis label="Categories" side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" label="Quantite" side="TOP" tickLabelGap="5.0">
+               <tickLabelFont>
+                  <Font size="13.0" />
+               </tickLabelFont>
+            </NumberAxis>
+        </yAxis>
+      </BarChart>
+      <Label fx:id="totalLabel" layoutX="446.0" layoutY="655.0" text="Total des produits est : ">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

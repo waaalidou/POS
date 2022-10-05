@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="716.0" prefWidth="1244.0" style="-fx-background-color: #fff;" stylesheets="@../../css/tableview/tv.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientScreenController">
+    <children>
+        <HBox alignment="CENTER_LEFT" layoutX="375.0" layoutY="97.0" prefHeight="45.0" prefWidth="800.0" AnchorPane.rightAnchor="69.0">
+            <children>
+                <FontAwesomeIconView fx:id="refreshIcon" fill="#00c853" glyphName="REFRESH" onMouseClicked="#refreshTable" size="37" styleClass="btn">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+                <FontAwesomeIconView fill="#03a9f4" glyphName="PLUS" onMouseClicked="#addClientScreen" size="37" styleClass="btn">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+                <FontAwesomeIconView fill="#e53935" glyphName="REMOVE" onMouseClicked="#deleteClient" size="37" styleClass="btn">
+                    <HBox.margin>
+                        <Insets bottom="4.0" right="15.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="categoryAdd" glyphName="SERVER" onMouseClicked="#addAbonement" size="35">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView glyphName="BOOK" onMouseClicked="#StaticsPage" size="37">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+                <FontAwesomeIconView fx:id="LOGOUT" fill="#b71c1c" glyphName="SIGN_OUT" onMouseClicked="#logout" size="37" />
+            <ComboBox fx:id="filterAbonement" prefHeight="35.0" prefWidth="142.0" promptText="Abonement">
+               <HBox.margin>
+                  <Insets left="84.0" right="15.0" />
+               </HBox.margin>
+            </ComboBox>
+                <TextField fx:id="searchField" prefHeight="35.0" prefWidth="180.0" promptText="Nom">
+                    <HBox.margin>
+                        <Insets right="9.0" />
+                    </HBox.margin>
+                </TextField>
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchByName" prefHeight="35.0" prefWidth="90.0" styleClass="btn" stylesheets="@../../css/tableview/tv.css" text="Search">
+                    <HBox.margin>
+                        <Insets right="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <TableView fx:id="clients" layoutX="375.0" layoutY="152.0" prefHeight="526.0" prefWidth="791.0" AnchorPane.bottomAnchor="38.0" AnchorPane.rightAnchor="78.0">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="60.0" style="-fx-alignment: center;" text="id" />
+                <TableColumn fx:id="NomCol" prefWidth="154.0" style="-fx-alignment: center;" text="Nom" />
+                <TableColumn fx:id="CodeCol" prefWidth="95.0" style="-fx-alignment: center;" text="Code" />
+                <TableColumn fx:id="AddressCol" prefWidth="196.0" style="-fx-alignment: center;" text="Addresse" />
+                <TableColumn fx:id="NumCol" prefWidth="160.0" style="-fx-alignment: center;" text="Num Tele" />
+            <TableColumn fx:id="AbonementCol" prefWidth="124.0" style="-fx-alignment: center;" text="Abonement" />
+            </columns>
+        </TableView>
+        <TextField fx:id="nameField" layoutX="60.0" layoutY="201.0" prefHeight="42.0" prefWidth="255.0" promptText="Nom" AnchorPane.leftAnchor="60.0" />
+        <Label layoutX="60.0" layoutY="176.0" text="Nom" AnchorPane.leftAnchor="60.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CodeField" layoutX="60.0" layoutY="278.0" prefHeight="42.0" prefWidth="255.0" promptText="Code" AnchorPane.leftAnchor="60.0" />
+        <Label layoutX="60.0" layoutY="253.0" text="Code" AnchorPane.leftAnchor="60.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="teleField" layoutX="60.0" layoutY="360.0" prefHeight="42.0" prefWidth="255.0" promptText="Num Tele" AnchorPane.leftAnchor="60.0" />
+        <Label layoutX="60.0" layoutY="335.0" text="Numero Telephone" AnchorPane.leftAnchor="60.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="updatebtn" layoutX="119.0" layoutY="572.0" onAction="#Ajouter" prefHeight="42.0" prefWidth="137.0" style="-fx-background-color: #00B0FF;" text="MaJ" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </JFXButton>
+        <FontAwesomeIconView fx:id="backIcon" glyphName="ARROW_LEFT" layoutX="14.0" layoutY="49.0" onMouseClicked="#goBackFunction" size="30" />
+        <TextField fx:id="AdressF" layoutX="60.0" layoutY="440.0" prefHeight="42.0" prefWidth="255.0" promptText="Adress" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="440.0" />
+        <Label layoutX="60.0" layoutY="415.0" text="Adress" AnchorPane.leftAnchor="60.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="516.0" layoutY="16.0" text="List Des Clients">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+      <ComboBox fx:id="AbonementChoice" layoutX="60.0" layoutY="506.0" prefHeight="35.0" prefWidth="142.0" promptText="Abonement" />
+      <JFXTextField fx:id="codeAbonField" layoutX="225.0" layoutY="511.0" prefHeight="25.0" prefWidth="90.0" promptText="Code" />
+    </children>
+</AnchorPane>

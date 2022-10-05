@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="710.0" prefWidth="1150.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.statistics.clients.ClientsStaticsController">
+   <children>
+      <PieChart fx:id="ClientParAbonement" layoutX="56.0" layoutY="66.0" prefHeight="300.0" prefWidth="500.0" title="Client/Abonement" AnchorPane.leftAnchor="50.0" />
+      <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="14.0" layoutY="40.0" onMouseClicked="#goBackFunction" size="30" />
+      <Label alignment="CENTER" layoutX="430.0" layoutY="13.0" text="Statistiques Des Clients">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="ClientAbonement" layoutX="631.0" layoutY="66.0" prefHeight="300.0" prefWidth="500.0" style="-fx-bar-fill: #22bad9;" title="Nomber Client par Abonement" AnchorPane.rightAnchor="50.0">
+        <xAxis>
+          <CategoryAxis label="Abonement" side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" label="Nombre" side="TOP" tickLabelGap="5.0">
+               <tickLabelFont>
+                  <Font size="13.0" />
+               </tickLabelFont>
+            </NumberAxis>
+        </yAxis>
+      </BarChart>
+      <PieChart fx:id="ClientParWilaya" layoutX="50.0" layoutY="395.0" prefHeight="300.0" prefWidth="500.0" title="Client/Wilay" AnchorPane.leftAnchor="50.0" />
+      <BarChart fx:id="ClientWilaya" layoutX="631.0" layoutY="395.0" prefHeight="300.0" prefWidth="500.0" title="Nomber Client par Wilaya" AnchorPane.rightAnchor="50.0">
+         <xAxis>
+            <CategoryAxis label="Wilaya" side="BOTTOM" fx:id="xAxis1" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="yAxis1" label="Nomber" side="TOP" tickLabelGap="5.0">
+               <tickLabelFont>
+                  <Font size="13.0" />
+               </tickLabelFont>
+            </NumberAxis>
+         </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
