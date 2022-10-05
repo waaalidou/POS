@@ -7,7 +7,7 @@ A simple desktop app **POS** made using javafx and MySQL
 3. Search in Products
 4. Different Statics of the products
 
-##Clients
+## Clients
 1. Add/delete/update
 2. Different Statics of the products
 
